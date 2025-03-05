@@ -58,7 +58,7 @@
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
       # FIXME replace with your hostname
-      nixdeck = nixpkgs.lib.nixosSystem {
+      creeper-net = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = with inputs; [
           # > Our main nixos configuration file <
@@ -72,7 +72,7 @@
     # Available through 'home-manager --flake .#your-username@your-hostname'
     homeConfigurations = {
       # FIXME replace with your username@hostname
-      "jonathan@nixdeck" = home-manager.lib.homeManagerConfiguration {
+      "brandon@creeper-net" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [

@@ -47,8 +47,8 @@
 
   # TODO: Set your username
   home = {
-    username = "jonathan";
-    homeDirectory = "/home/jonathan";
+    username = "brandon";
+    homeDirectory = "/home/brandon";
   };
 
   # Add stuff for your user as you see fit:

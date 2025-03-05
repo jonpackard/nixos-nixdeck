@@ -12,7 +12,7 @@
   jovian.steam.autoStart = true;
 
   # Set Steam Deck GUI user
-  jovian.steam.user = "jonathan";
+  jovian.steam.user = "brandon";
 
   # Enable plasma desktop manager.
   services.desktopManager.plasma6.enable = true;
