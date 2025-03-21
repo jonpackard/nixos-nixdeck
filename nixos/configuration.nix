@@ -28,6 +28,7 @@
     ./jovianos.nix
     ./packages.nix
     ./firewall.nix
+    ./activity-monitor.nix
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
@@ -107,7 +108,7 @@
     enable = true;
     settings = {
       # Opinionated: forbid root login through SSH.
-      PermitRootLogin = "no";
+      # PermitRootLogin = "no";
       # Opinionated: use keys only.
       # Remove if you want to SSH using passwords
       PasswordAuthentication = false;
