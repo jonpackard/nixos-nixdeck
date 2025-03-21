@@ -20,14 +20,13 @@
       LOG_FILE="/run/user/1000/.inputevent0"
       ACTIVITY_LOG_FILE="/var/log/.activity-log"
       TIMEOUT=300 # 5 minutes
-      TZ="America/New_York"
 
       while true; do
         ${pkgs.coreutils}/bin/timeout $TIMEOUT \
-          ${pkgs.evtest}/bin/evtest /dev/input/event0 > "$LOG_FILE" || true
+          ${pkgs.evtest}/bin/evtest /dev/input/event0 > "$LOG_FILE" || true # Prevent non-zero exit code from timeout command
         
         if ${pkgs.gnugrep}/bin/grep -qi "event: time" "$LOG_FILE"; then
-          ${pkgs.coreutils}/bin/date "+%F %T %Z - Activity detected in the last 5 minutes!" \
+          TZ="America/New_York" ${pkgs.coreutils}/bin/date "+%a %b %d %I:%M:%S %p %Z %Y - Activity detected in the last 5 minutes!" \
             >> "$ACTIVITY_LOG_FILE"
         fi
         sleep 1
